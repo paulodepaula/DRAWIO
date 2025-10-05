@@ -1,2 +1,112 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5"><diagram name="Página-1" id="2gtoVsM-_BX4aFPIDRAt">jZNNb4QgEIZ/jVejsB96bO22PbRJkz30aFiZFVoUAri6/fXFil/ZbNKT8LwzwMw7BjiruhdNFHuXFESAItoF+ClAKN7h1H16ch1IksYDKDWnPmgGR/4DHkaeNpyCWQVaKYXlag0LWddQ2BUjWst2HXaWYn2rIiXcgGNBxC395NQyT+NdOguvwEvmr07QfhAqMgb7SgwjVLYLhA8BzrSUdlhVXQaib97YlyHv+Y46PUxDbf+TgIaECxGNr82/y17HYpmthFvFAX68gLbcteGNnEB8SMMtl7XTTtJaWS0CHgQve8FK5ahsrOA1ZJMbkYNT5f2GEsOAzorq7666sh+fUJPiO2QKcqKbEwlNy23BwIRfabLdkRxtcZSjTZkjc1ZKNCYfItxJvjj3KOjuNiie2u7mFWQFVl9diE/YJ5swwkOWn1YUefPahfcb3zi2sD3e+pHz41ZOp8+OuIU3ZdzO5v9pi18IH34B</diagram></mxfile>
+# Flow Panel YAML - RedeTI Shopping - Dashboard de Fluxo
+# Compatível com o plugin: andrewbmchugh/flow-panel
+# Exemplo adaptado à estrutura visual de rede real
+
+site:
+  name: "RedeTI Shopping"
+  description: "Topologia de rede com links monitorados via Zabbix"
+
+nodes:
+  - id: internet
+    name: "Internet"
+    icon: "cloud"
+    x: 100
+    y: 200
+
+  - id: mikrotik
+    name: "MikroTik RB3011"
+    icon: "router"
+    x: 300
+    y: 200
+    metrics:
+      status: "{Template_Mikrotik:icmpping.loss.last()}"
+
+  - id: switch_core
+    name: "Switch Core"
+    icon: "switch"
+    x: 500
+    y: 200
+    metrics:
+      status: "{Template_UniFi_Switch_HTTP:unifi.status.last()}"
+
+  - id: switch_poe
+    name: "Switch PoE - Andar 1"
+    icon: "switch"
+    x: 700
+    y: 150
+    metrics:
+      status: "{Template_UniFi_Switch_Ports_HTTP:unifi.port.status[1].last()}"
+
+  - id: cftv
+    name: "CFTV"
+    icon: "camera"
+    x: 900
+    y: 150
+    metrics:
+      status: "{Template_CFTV:icmpping.loss.last()}"
+
+  - id: ap1
+    name: "AP UniFi - L2-1"
+    icon: "wifi"
+    x: 700
+    y: 250
+    metrics:
+      status: "{Template_UniFi_AP_HTTP:unifi.ap.uptime.last()}"
+
+  - id: ap2
+    name: "AP UniFi - L2-2"
+    icon: "wifi"
+    x: 900
+    y: 250
+    metrics:
+      status: "{Template_UniFi_AP_HTTP:unifi.ap.clients.last()}"
+
+  - id: servidor
+    name: "Servidor Zabbix / VM"
+    icon: "server"
+    x: 500
+    y: 350
+    metrics:
+      status: "{Template_OS_Linux:system.uptime.last()}"
+
+links:
+  - source: internet
+    target: mikrotik
+    width: 2
+    color: "{% if Template_Mikrotik:icmpping.loss.last() > 0 %}#ff0000{% else %}#00ff00{% endif %}"
+
+  - source: mikrotik
+    target: switch_core
+    width: 2
+    color: "{% if Template_UniFi_Switch_HTTP:unifi.status.last() = 1 %}#00ff00{% else %}#ff0000{% endif %}"
+
+  - source: switch_core
+    target: switch_poe
+    width: 2
+    color: "{% if Template_UniFi_Switch_Ports_HTTP:unifi.port.status[1].last() = 1 %}#00ff00{% else %}#ff0000{% endif %}"
+
+  - source: switch_poe
+    target: cftv
+    width: 2
+    color: "{% if Template_CFTV:icmpping.loss.last() > 0 %}#ff0000{% else %}#00ff00{% endif %}"
+
+  - source: switch_core
+    target: ap1
+    width: 2
+    color: "{% if Template_UniFi_AP_HTTP:unifi.ap.uptime.last() > 0 %}#00ff00{% else %}#ff0000{% endif %}"
+
+  - source: switch_core
+    target: ap2
+    width: 2
+    color: "{% if Template_UniFi_AP_HTTP:unifi.ap.clients.last() > 0 %}#00ff00{% else %}#ff0000{% endif %}"
+
+  - source: switch_core
+    target: servidor
+    width: 2
+    color: "{% if Template_OS_Linux:system.uptime.last() > 0 %}#00ff00{% else %}#ff0000{% endif %}"
+
+style:
+  fontSize: 12
+  backgroundColor: "#0a0a0a"
+  linkDefaultColor: "#00ff00"
+  iconColor: "#cccccc"
