@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram name="Página-1" id="Bhh0uhaH1t4ANIuKrrTR">
+    <mxGraphModel dx="1582" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-5" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_globe.svg;" vertex="1" parent="1">
+          <mxGeometry x="740" y="40" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-13" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qrj7wbIq-b_tHc4I9jzM-28" target="qrj7wbIq-b_tHc4I9jzM-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="147.49180327868862" y="134" as="sourcePoint" />
+            <mxPoint x="176.7906250000001" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-21" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qrj7wbIq-b_tHc4I9jzM-7" target="qrj7wbIq-b_tHc4I9jzM-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-7" value="BR3011" style="image;html=1;image=img/lib/clip_art/networking/Switch_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="215" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-15" value="" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.slb_server_load_balancer_03;" vertex="1" parent="1">
+          <mxGeometry x="232.35999999999999" y="210" width="35.28" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-33" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qrj7wbIq-b_tHc4I9jzM-16" target="qrj7wbIq-b_tHc4I9jzM-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-16" value="OPNsense" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Azure_Firewall_Manager.svg;" vertex="1" parent="1">
+          <mxGeometry x="215" y="390" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-22" value="SW-CORE&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9854a_2530_24g_poeplus_2sfpplus_switch;" vertex="1" parent="1">
+          <mxGeometry x="179" y="530" width="142" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-30" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qrj7wbIq-b_tHc4I9jzM-26" target="qrj7wbIq-b_tHc4I9jzM-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-26" value="ONU-CONECT" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/switch_voyager.svg;" vertex="1" parent="1">
+          <mxGeometry x="390" y="80" width="96" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-28" value="ONU-5.8&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/switch_bare_metal_empty.svg;" vertex="1" parent="1">
+          <mxGeometry x="100.00000000000001" y="70" width="96" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-31" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qrj7wbIq-b_tHc4I9jzM-29" target="qrj7wbIq-b_tHc4I9jzM-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qrj7wbIq-b_tHc4I9jzM-29" value="RB750" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.switch;" vertex="1" parent="1">
+          <mxGeometry x="290" y="151" width="55" height="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
