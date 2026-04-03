@@ -3,12 +3,3 @@ cellIdPreamble: "cell-"
 cells:
   - id: "0"
     dataRef: "A"
-    label:
-      units: "bps"
-      separator: "space"
-
-  - id: "1"
-    dataRef: "B"
-    label:
-      units: "bps"
-      separator: "space"
