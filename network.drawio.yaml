@@ -1,13 +1,13 @@
 cellIdPreamble: "cell-"
 
 cells:
-  - id: "cell-H23iYUNjMeneAqPojzM6-2"
+  - id: "1"
     dataRef: "A"
     label:
       separator: "space"
       units: "bps"
 
-  - id: "cell-H23iYUNjMeneAqPojzM6-1"
+  - id: "0"
     dataRef: "B"
     label:
       separator: "space"
