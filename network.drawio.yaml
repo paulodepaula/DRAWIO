@@ -1,9 +1,14 @@
 cellIdPreamble: "cell-"
 
 cells:
-  - id: "cell-1"
-    dataRef: "A"
-
   - id: "0"
-    dataRef: "B"
+    dataRef: "A"
+    label:
+      units: "bps"
+      separator: "space"
 
+  - id: "1"
+    dataRef: "B"
+    label:
+      units: "bps"
+      separator: "space"
