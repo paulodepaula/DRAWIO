@@ -1,0 +1,81 @@
+# Flow Panel config corrigido para o plugin andrewbmchugh/flow-panel
+# IMPORTANTE:
+# 1) No Grafana, dê alias fixo nas consultas:
+#    - Query A -> RX
+#    - Query B -> TX
+# 2) Ajuste os dataRef abaixo se o seu datasource expuser outro nome de série.
+# 3) Este arquivo usa IDs estáveis definidos no SVG corrigido.
+
+cellIdPreamble: "cell-"
+
+gradientMode: "hue"
+
+# opcional, mas ajuda a manter a legenda mais limpa
+tagConfig:
+  condensed: false
+
+cells:
+  # Texto principal sobre o link WAN -> mostra RX/download
+  rx_label:
+    dataRef: "RX"
+    label:
+      separator: "colon"
+      units: "bps"
+    labelColor:
+      thresholds:
+        - { color: "green",  level: 0 }
+        - { color: "orange", level: 50000000 }
+        - { color: "red",    level: 100000000 }
+
+  # Texto secundário sobre o uplink -> mostra TX/upload
+  tx_label:
+    dataRef: "TX"
+    label:
+      separator: "colon"
+      units: "bps"
+    labelColor:
+      thresholds:
+        - { color: "green",  level: 0 }
+        - { color: "orange", level: 50000000 }
+        - { color: "red",    level: 100000000 }
+
+    # Como tx_label é um edge-label no SVG, também podemos usar a borda
+    # para reforçar visualmente o estado do tráfego.
+    strokeColor:
+      thresholds:
+        - { color: "green",  level: 0 }
+        - { color: "orange", level: 50000000 }
+        - { color: "red",    level: 100000000 }
+
+  # Linha WAN/Internet -> cor e animação pelo RX
+  wan_link:
+    dataRef: "RX"
+    strokeColor:
+      thresholds:
+        - { color: "green",  level: 0 }
+        - { color: "orange", level: 50000000 }
+        - { color: "red",    level: 100000000 }
+    flowAnimation:
+      thresholdOffValue: 1
+      thresholdLwrValue: 1000000
+      thresholdLwrDurationSecs: 1.2
+      thresholdUprValue: 100000000
+      thresholdUprDurationSecs: 0.2
+
+  # Nó do MikroTik
+  mikrotik:
+    dataRef: "RX"
+    labelColor:
+      thresholds:
+        - { color: "green",  level: 0 }
+        - { color: "orange", level: 50000000 }
+        - { color: "red",    level: 100000000 }
+
+  # Nó do switch principal
+  switch_24p:
+    dataRef: "TX"
+    labelColor:
+      thresholds:
+        - { color: "green",  level: 0 }
+        - { color: "orange", level: 50000000 }
+        - { color: "red",    level: 100000000 }
