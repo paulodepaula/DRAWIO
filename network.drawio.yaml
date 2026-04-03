@@ -1,7 +1,7 @@
 cellIdPreamble: "cell-"
 
 cells:
-  - id: "1"
+  - id: "cell-1"
     dataRef: "A"
 
   - id: "0"
