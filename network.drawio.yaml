@@ -1,31 +1,14 @@
 cellIdPreamble: "cell-"
-gradientMode: "hue"
-
-tagConfig:
-  condensed: false
 
 cells:
   - id: "rx_label"
     dataRef: "A"
-    label: "↓ {{value}}"
+    label:
+      separator: "space"
+      units: "bps"
 
   - id: "tx_label"
     dataRef: "B"
-    label: "↑ {{value}}"
-
-  - id: "wan_link"
-    dataRef: "A"
-    strokeColor:
-      thresholds:
-        - color: "green"
-          level: 0
-        - color: "orange"
-          level: 50000000
-        - color: "red"
-          level: 100000000
-    flowAnimation:
-      thresholdOffValue: 1
-      thresholdLwrValue: 1000000
-      thresholdLwrDurationSecs: 1.2
-      thresholdUprValue: 100000000
-      thresholdUprDurationSecs: 0.2
+    label:
+      separator: "space"
+      units: "bps"
