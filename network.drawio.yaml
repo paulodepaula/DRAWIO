@@ -79,3 +79,11 @@ cells:
         - { color: "green",  level: 0 }
         - { color: "orange", level: 50000000 }
         - { color: "red",    level: 100000000 }
+mappings:
+  - id: link_porta_24
+    metrics:
+      - query: A
+        alias: down
+      - query: B
+        alias: up
+    text: "↓ {{down}} Mbps\n↑ {{up}} Mbps"
