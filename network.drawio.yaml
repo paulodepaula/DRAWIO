@@ -8,12 +8,10 @@ cells:
   - id: "rx_label"
     dataRef: "A"
     label: "↓ {{value}}"
-    labelColor: "#00bfff"
 
   - id: "tx_label"
     dataRef: "B"
     label: "↑ {{value}}"
-    labelColor: "#00ff00"
 
   - id: "wan_link"
     dataRef: "A"
